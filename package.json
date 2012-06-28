@@ -1,14 +1,14 @@
 {
-  "name": "pdeEngine",
-  "version": "0.0.4",
+  "name": "pde-engine",
+  "version": "0.1.2",
   "description": "Basic heat and wave equation solver for node and the browser",
-  "main": "pdeEngine.js",
+  "main": "pde-engine.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bpostlethwaite/pdeEngine.git"
+    "url": "git://github.com/bpostlethwaite/pde-engine.git"
   },
   "keywords": [
     "pde",
