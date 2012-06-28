@@ -1,4 +1,4 @@
-# pdeEngine
+# pde-engine
 
 
 A simple solver of the heat/diffusion equation and wave equation meant for driving visualizations not for performing exacting scientific analysis. The forward Euler step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.
@@ -20,7 +20,7 @@ field.setResolution(80, 100)
 io.sockets.on('connection', function (socket) {
 
   socket.on('addSource', function(data) {
-    field.addSource(data.row, data.col)
+    field.addSource(data.row, data.col, mag)
   })
 
 })
@@ -39,7 +39,7 @@ setInterval( function () {
 ```
 
 Of course you can employ any means of adding sources.
-
+The `addSource` method specifies the location of the source at that particular timestep with magnitude `mag`. Right now it emplaces a hard-coded Gaussian source centred at `(row, col)`, with boundary cases already implemented.
 
 ## Configuration
 The following are possible configuration options. If configs are omitted defaults will be used. The defaults are given after the `||`:
