@@ -1,0 +1,25 @@
+{
+  "name": "pdeEngine",
+  "version": "0.0.4",
+  "description": "Basic heat and wave equation solver for node and the browser",
+  "main": "pdeEngine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bpostlethwaite/pdeEngine.git"
+  },
+  "keywords": [
+    "pde",
+    "physics",
+    "equation",
+    "wave",
+    "diffusion",
+    "heat",
+    "engine",
+    "math"
+  ],
+  "author": "Ben Postlethwaite",
+  "license": "MIT"
+}
