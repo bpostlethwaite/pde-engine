@@ -1,5 +1,5 @@
 
-exports = module.exports = function pdeEngine(spec) {
+module.exports = function pdeEngine(spec) {
   var that = {}
     , dt = spec.dt || 0.1
     , dx = spec.dx || 1

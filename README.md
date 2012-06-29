@@ -59,3 +59,6 @@ The following are possible configuration options. If configs are omitted default
 This is an early but fully working physics engine. Future releases may optimize algorithms or add new methods/configs, but this basic API should remain stable.
 
 Tests will be coming I have them already for my own purposes.  Just need to refactor and include.
+
+
+### License MIT
