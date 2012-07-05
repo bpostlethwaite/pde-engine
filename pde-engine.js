@@ -1,4 +1,4 @@
-
+/*jshint laxcomma: true*/
 module.exports = function pdeEngine(spec) {
   var that = {}
     , dt = spec.dt || 0.1
@@ -10,9 +10,6 @@ module.exports = function pdeEngine(spec) {
     , u                            // main data array
     , un                           // next time step data array
     , up                           // previous time step data array
-    , uu                           // poisson data array
-    , si = []                      // poisson sources x dim
-    , sj = []                      // poisson sources y dim
     , width
     , height
     , coeffs = [   // 2d laplace operator
@@ -123,7 +120,6 @@ module.exports = function pdeEngine(spec) {
     u = Array.matrix(height, width, 0)
     up = Array.matrix(height, width, 0)
     un = Array.matrix(height, width, 0)
-    uu = Array.matrix(height,width, 0)
   }
 
   function setResolution (hRes, wRes) {
