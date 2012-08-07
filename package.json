@@ -1,6 +1,6 @@
 {
   "name": "pde-engine",
-  "version": "0.1.3",
+  "version": "0.1.8",
   "description": "Basic heat and wave equation solver for node and the browser",
   "main": "pde-engine.js",
   "scripts": {

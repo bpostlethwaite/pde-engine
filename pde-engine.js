@@ -1,6 +1,7 @@
 
 module.exports = function pdeEngine(spec) {
   var that = {}
+    , spec = spec || {}
     , dt = spec.dt || 0.1
     , dx = spec.dx || 1
     , gamma = spec.gamma || 0.02   // wave decay factor
