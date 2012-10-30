@@ -1,41 +1,54 @@
 # pde-engine
 
-
 A simple solver of the heat/diffusion equation and wave equation meant for driving visualizations not for performing exacting scientific analysis. The forward Euler step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.
 
-It solves the pde on an nxm square grid with n and m being defined by the `setResolution` method.
+It solves the pde on an mxn square grid with m and n being defined by the `setResolution` method.
+Note it outputs a vector that must be indexed by `f[i*n + j]` where `0 < i < m` and `0 < j < n`.
+
+Version 0.2.0 uses [Typed Arrays](https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays) for computational efficiency / speed.
 
 ## How to use
 
 ```javascript
-io = require('socket.io').listen(6543)
-engine = require('pdeEngine')
-field = engine( {
+
+var engine = require('../pde-engine')
+  , aprint = require('../printArray')
+  , wave = engine( {
     dt: 0.1
   , gamma: 0.02
-  , eqn: "wave"
-  })
-field.setResolution(80, 100)
-
-io.sockets.on('connection', function (socket) {
-
-  socket.on('addSource', function(data) {
-    field.addSource(data.row, data.col, mag)
+  , eqn: "wave"  // Specify "diffusion" to use diffusion eqn.
   })
 
-})
+
+var dims = {
+  x: 12
+, y: 12
+}
+
+wave.setResolution(dims.x, dims.y)
+
+var src = {
+  x: 3
+, y: 5
+, mag: 1
+}
+
+wave.addSource(src.x, src.y, src.mag)
+
 
 setInterval( function () {
 
-  var coeffs = field.update( {
-      dt: 0.1
-    , eqn: "diffusion"
-    , alpha: 0.5
-    })
-
+  var field = wave.update()
+  //
   // Render coeffs //
+  //
 
-} , 50 )
+  aprint(field, 5, [dims.x, dims.y])
+  console.log()
+
+} , 1000 )
+
+
 ```
 
 Of course you can employ any means of adding sources.
@@ -58,7 +71,7 @@ The following are possible configuration options. If configs are omitted default
 
 This is an early but fully working physics engine. Future releases may optimize algorithms or add new methods/configs, but this basic API should remain stable.
 
-Tests will be coming I have them already for my own purposes.  Just need to refactor and include.
-
+Tests will be coming soon. For now this is primarily a tool for graphics.
+See [benpostlethwaite.ca](http://benpostlethwaite.ca) for a working example.
 
 ### License MIT

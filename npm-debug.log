@@ -1,0 +1,135 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@1.1.63
+3 info using node@v0.8.12
+4 verbose publish [ '.' ]
+5 verbose read json /home/bpostlet/programming/node/pde-engine/package.json
+6 verbose cache add [ '.', null ]
+7 silly cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { pathname: '.', path: '.', href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /home/bpostlet/.npm/3a52ce78-.lock
+11 verbose read json package.json
+12 verbose tar pack [ '/home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/tmp.tgz',
+12 verbose tar pack   '.' ]
+13 verbose tarball /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/tmp.tgz
+14 verbose folder .
+15 info prepublish pde-engine@0.2.0
+16 silly lockFile 3caecd9b-40620-0-5120379796717316-tmp-tgz /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/tmp.tgz
+17 verbose lock /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/tmp.tgz /home/bpostlet/.npm/3caecd9b-40620-0-5120379796717316-tmp-tgz.lock
+18 silly lockFile 3caecd9b-40620-0-5120379796717316-tmp-tgz /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/tmp.tgz
+19 verbose tar unpack /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/tmp.tgz
+20 silly lockFile e28ac505-40620-0-5120379796717316-package /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/package
+21 verbose lock /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/package /home/bpostlet/.npm/e28ac505-40620-0-5120379796717316-package.lock
+22 silly gunzTarPerm modes [ '755', '644' ]
+23 silly gunzTarPerm extractEntry package.json
+24 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+25 silly gunzTarPerm extractEntry README.md
+26 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+27 silly gunzTarPerm extractEntry pde-engine.js
+28 silly gunzTarPerm modified mode [ 'pde-engine.js', 436, 420 ]
+29 silly gunzTarPerm extractEntry printArray.js
+30 silly gunzTarPerm modified mode [ 'printArray.js', 436, 420 ]
+31 silly gunzTarPerm extractEntry test/typed-test.js
+32 silly gunzTarPerm modified mode [ 'test/typed-test.js', 436, 420 ]
+33 silly gunzTarPerm extractEntry example/wavepde.js
+34 silly gunzTarPerm modified mode [ 'example/wavepde.js', 436, 420 ]
+35 verbose read json /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/package/package.json
+36 silly lockFile e28ac505-40620-0-5120379796717316-package /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/package
+37 verbose from cache /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/package/package.json
+38 verbose tar pack [ '/home/bpostlet/.npm/pde-engine/0.2.0/package.tgz',
+38 verbose tar pack   '/home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/package' ]
+39 verbose tarball /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz
+40 verbose folder /home/bpostlet/tmp/npm-25314/1351640940620-0.5120379796717316/package
+41 silly lockFile 1cc2ee74-npm-pde-engine-0-2-0-package-tgz /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz
+42 verbose lock /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz /home/bpostlet/.npm/1cc2ee74-npm-pde-engine-0-2-0-package-tgz.lock
+43 silly lockFile 1cc2ee74-npm-pde-engine-0-2-0-package-tgz /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz
+44 silly lockFile 7b98a14b-let-npm-pde-engine-0-2-0-package /home/bpostlet/.npm/pde-engine/0.2.0/package
+45 verbose lock /home/bpostlet/.npm/pde-engine/0.2.0/package /home/bpostlet/.npm/7b98a14b-let-npm-pde-engine-0-2-0-package.lock
+46 silly lockFile 7b98a14b-let-npm-pde-engine-0-2-0-package /home/bpostlet/.npm/pde-engine/0.2.0/package
+47 verbose tar unpack /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz
+48 silly lockFile 7b98a14b-let-npm-pde-engine-0-2-0-package /home/bpostlet/.npm/pde-engine/0.2.0/package
+49 verbose lock /home/bpostlet/.npm/pde-engine/0.2.0/package /home/bpostlet/.npm/7b98a14b-let-npm-pde-engine-0-2-0-package.lock
+50 silly gunzTarPerm modes [ '755', '644' ]
+51 silly gunzTarPerm extractEntry package.json
+52 silly gunzTarPerm extractEntry README.md
+53 silly gunzTarPerm extractEntry pde-engine.js
+54 silly gunzTarPerm extractEntry printArray.js
+55 silly gunzTarPerm extractEntry test/typed-test.js
+56 silly gunzTarPerm extractEntry example/wavepde.js
+57 verbose read json /home/bpostlet/.npm/pde-engine/0.2.0/package/package.json
+58 silly lockFile 7b98a14b-let-npm-pde-engine-0-2-0-package /home/bpostlet/.npm/pde-engine/0.2.0/package
+59 silly shasum updated bytes 3548
+60 info shasum b1868ffba72670c70b8b3846d1299cb37f5aa3b8
+60 info shasum /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz
+61 verbose from cache /home/bpostlet/.npm/pde-engine/0.2.0/package/package.json
+62 verbose chmod /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz 644
+63 verbose chown /home/bpostlet/.npm/pde-engine/0.2.0/package.tgz [ 1001, 1001 ]
+64 silly lockFile 3a52ce78- .
+65 silly publish { name: 'pde-engine',
+65 silly publish   version: '0.2.0',
+65 silly publish   description: 'Basic heat and wave equation solver for node and the browser',
+65 silly publish   main: 'pde-engine.js',
+65 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+65 silly publish   repository:
+65 silly publish    { type: 'git',
+65 silly publish      url: 'git://github.com/bpostlethwaite/pde-engine.git' },
+65 silly publish   keywords:
+65 silly publish    [ 'pde',
+65 silly publish      'physics',
+65 silly publish      'equation',
+65 silly publish      'wave',
+65 silly publish      'diffusion',
+65 silly publish      'heat',
+65 silly publish      'engine',
+65 silly publish      'math' ],
+65 silly publish   author: { name: 'Ben Postlethwaite' },
+65 silly publish   license: 'MIT',
+65 silly publish   readme: '# pde-engine\n\nA simple solver of the heat/diffusion equation and wave equation meant for driving visualizations not for performing exacting scientific analysis. The forward Euler step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.\n\nIt solves the pde on an mxn square grid with m and n being defined by the `setResolution` method.\nNote it outputs a vector that must be indexed by `f[i*n + j]` where `0 < i < m` and `0 < j < n`.\n\nVersion 0.2.0 uses [Typed Arrays](https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays) for computational efficiency / speed.\n\n## How to use\n\n```javascript\n\nvar engine = require(\'../pde-engine\')\n  , aprint = require(\'../printArray\')\n  , wave = engine( {\n    dt: 0.1\n  , gamma: 0.02\n  , eqn: "wave"  // Specify "diffusion" to use diffusion eqn.\n  })\n\n\nvar dims = {\n  x: 12\n, y: 12\n}\n\nwave.setResolution(dims.x, dims.y)\n\nvar src = {\n  x: 3\n, y: 5\n, mag: 1\n}\n\nwave.addSource(src.x, src.y, src.mag)\n\n\nsetInterval( function () {\n\n  var field = wave.update()\n  //\n  // Render coeffs //\n  //\n\n  aprint(field, 5, [dims.x, dims.y])\n  console.log()\n\n} , 1000 )\n\n\n```\n\nOf course you can employ any means of adding sources.\nThe `addSource` method specifies the location of the source at that particular timestep with magnitude `mag`. Right now it emplaces a hard-coded Gaussian source centred at `(row, col)`, with boundary cases already implemented.\n\n## Configuration\nThe following are possible configuration options. If configs are omitted defaults will be used. The defaults are given after the `||`:\n```javascript\n{\n   dt = spec.dt || 0.1\n , dx = spec.dx || 1\n , gamma = spec.gamma || 0.02   // wave decay factor\n , vel = spec.vel || 2          // wave velocity\n , alpha = spec.alpha || 1      // diffusion paramter\n , eqn = spec.eqn || \'wave\'\n}\n```\n\n## Versioning and updates\n\nThis is an early but fully working physics engine. Future releases may optimize algorithms or add new methods/configs, but this basic API should remain stable.\n\nTests will be coming soon. For now this is primarily a tool for graphics.\nSee [benpostlethwaite.ca](http://benpostlethwaite.ca) for a working example.\n\n### License MIT\n',
+65 silly publish   _id: 'pde-engine@0.2.0',
+65 silly publish   dist: { shasum: 'b1868ffba72670c70b8b3846d1299cb37f5aa3b8' } }
+66 verbose url raw pde-engine
+67 verbose url resolving [ 'https://registry.npmjs.org/', './pde-engine' ]
+68 verbose url resolved https://registry.npmjs.org/pde-engine
+69 info trying registry request attempt 1 at 16:49:01
+70 http PUT https://registry.npmjs.org/pde-engine
+71 http 409 https://registry.npmjs.org/pde-engine
+72 verbose url raw pde-engine
+73 verbose url resolving [ 'https://registry.npmjs.org/', './pde-engine' ]
+74 verbose url resolved https://registry.npmjs.org/pde-engine
+75 info trying registry request attempt 1 at 16:49:01
+76 http GET https://registry.npmjs.org/pde-engine
+77 http 200 https://registry.npmjs.org/pde-engine
+78 verbose url raw pde-engine/0.2.0/-tag/latest
+79 verbose url resolving [ 'https://registry.npmjs.org/',
+79 verbose url resolving   './pde-engine/0.2.0/-tag/latest' ]
+80 verbose url resolved https://registry.npmjs.org/pde-engine/0.2.0/-tag/latest
+81 info trying registry request attempt 1 at 16:49:02
+82 http PUT https://registry.npmjs.org/pde-engine/0.2.0/-tag/latest
+83 http 403 https://registry.npmjs.org/pde-engine/0.2.0/-tag/latest
+84 error publish Error sending version data
+85 error Error: forbidden user: postlethwaite not authorized to modify pde-engine
+85 error Changed: dist-tags.latest "0.1.8" -> "0.2.0"
+85 error Added: versions.0.2.0
+85 error Changed: time.modified "2012-08-07T18:22:34.836Z" -> "2012-10-30T23:48:55.677Z"
+85 error Added: time.0.2.0: pde-engine/0.2.0/-tag/latest
+85 error     at RegClient.<anonymous> (/usr/lib/nodejs/npm/node_modules/npm-registry-client/lib/request.js:259:14)
+85 error     at Request.init.self.callback (/usr/lib/nodejs/npm/node_modules/request/main.js:120:22)
+85 error     at Request.EventEmitter.emit (events.js:96:17)
+85 error     at Request.<anonymous> (/usr/lib/nodejs/npm/node_modules/request/main.js:648:16)
+85 error     at Request.EventEmitter.emit (events.js:123:20)
+85 error     at IncomingMessage.Request.start.self.req.self.httpModule.request.buffer (/usr/lib/nodejs/npm/node_modules/request/main.js:610:14)
+85 error     at IncomingMessage.EventEmitter.emit (events.js:123:20)
+85 error     at IncomingMessage._emitEnd (http.js:366:10)
+85 error     at HTTPParser.parserOnMessageComplete [as onMessageComplete] (http.js:149:23)
+85 error     at CleartextStream.socketOnData [as ondata] (http.js:1367:20)
+86 error If you need help, you may report this log at:
+86 error     <http://github.com/isaacs/npm/issues>
+86 error or email it to:
+86 error     <npm-@googlegroups.com>
+87 error System Linux 3.2.0-32-generic
+88 error command "nodejs" "/usr/bin/npm" "publish"
+89 error cwd /home/bpostlet/programming/node/pde-engine
+90 error node -v v0.8.12
+91 error npm -v 1.1.63
+92 verbose exit [ 1, true ]
