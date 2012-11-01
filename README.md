@@ -12,7 +12,7 @@ Version 0.2.0 uses [Typed Arrays](https://developer.mozilla.org/en-US/docs/JavaS
 ```javascript
 
 var engine = require('../pde-engine')
-  , aprint = require('../printArray')
+  , aprint = require('printarray')
   , wave = engine( {
     dt: 0.1
   , gamma: 0.02
