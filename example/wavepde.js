@@ -1,5 +1,13 @@
+/*  pde-engine
+ *
+ * A PDE solver for the wave and diffusion equations.
+ *
+ * Ben Postlethwaite 2012
+ * benpostlethwaite.ca
+ */
+
 var engine = require('../pde-engine')
-  , aprint = require('../printArray')
+  , aprint = require('printarray')
   , wave = engine( {
     dt: 0.1
   , gamma: 0.02

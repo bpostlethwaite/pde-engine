@@ -1,4 +1,12 @@
-module.exports = function pdeEngine_typed(spec) {
+/*  pde-engine
+ *
+ * A PDE solver for the wave and diffusion equations.
+ *
+ * Ben Postlethwaite 2012
+ * benpostlethwaite.ca
+ */
+
+module.exports = function pdeEngine(spec) {
   var that = {}
     , spec = spec || {}
     , dt = spec.dt || 0.1
