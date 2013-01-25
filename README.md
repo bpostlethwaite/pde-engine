@@ -1,6 +1,6 @@
 # pde-engine
 
-A simple and surprisingly easy to use partial-differential equation solver of the heat/diffusion equation and wave equation meant for driving visualizations not for performing exacting scientific analysis. The [forward Euler](http://en.wikipedia.org/wiki/Euler_method) step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.
+A simple and surprisingly easy to use partial-differential equation solver of the heat/diffusion equation and wave equation. The goal of this project was for driving visualizations not for performing exacting scientific analysis. The [forward Euler](http://en.wikipedia.org/wiki/Euler_method) step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.
 
 It solves the pde on an `mxn` grid with `m` and `n` being set by the `setResolution` method. Each call to `update` increases the solution by a time step given by `dt`. Depending on what the spatial step `dx` is set at is how fast the solution will converge - remember `v = x/t` from highschool. `update` outputs a single column vector that must be indexed by `f[i*n + j]` where `0 < i < m` and `0 < j < n`. The reason `pde-engine` outputs a 2D array strung out as a 1D vector is for computational speed.
 
