@@ -1,10 +1,12 @@
 # pde-engine
 
-A simple solver of the heat/diffusion equation and wave equation meant for driving visualizations not for performing exacting scientific analysis. The [forward Euler](http://en.wikipedia.org/wiki/Euler_method) step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.
+A simple and surprisingly easy to use partial-differential equation solver of the heat/diffusion equation and wave equation meant for driving visualizations not for performing exacting scientific analysis. The [forward Euler](http://en.wikipedia.org/wiki/Euler_method) step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.
 
-It solves the pde on an `mxn` grid with `m` and `n` being set by the `setResolution` method. Each call to `update` increases the solution by a time step given by `dt`. Depending on what the spatial step `dx` is set at is how fast the solution will converge, remember from highschool `v = x/t`. `update` outputs a single column vector that must be indexed by `f[i*n + j]` where `0 < i < m` and `0 < j < n`. The reason `pde-engine` outputs a 2D array strung out as a 1D vector is for computational speed.
+It solves the pde on an `mxn` grid with `m` and `n` being set by the `setResolution` method. Each call to `update` increases the solution by a time step given by `dt`. Depending on what the spatial step `dx` is set at is how fast the solution will converge - remember `v = x/t` from highschool. `update` outputs a single column vector that must be indexed by `f[i*n + j]` where `0 < i < m` and `0 < j < n`. The reason `pde-engine` outputs a 2D array strung out as a 1D vector is for computational speed.
 
 Version 0.2.0 uses [Typed Arrays](https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays) for computational efficiency / speed.
+
+I am using this thing without problems on [my website](http://benpostlethwaite.ca) by matching the output of each `update` step from the solver with a range of color values from [colormap](https://github.com/bpostlethwaite/colormap).
 
 ## How to use
 
