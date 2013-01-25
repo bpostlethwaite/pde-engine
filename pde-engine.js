@@ -4,17 +4,18 @@
  *
  * Ben Postlethwaite 2012
  * benpostlethwaite.ca
+ *
+ * License MIT
  */
 
 module.exports = function pdeEngine(spec) {
   var that = {}
     , spec = spec || {}
-    , dt = spec.dt || 0.1
-    , dx = spec.dx || 1
-    , gamma = spec.gamma || 0.02   // wave decay factor
+    , dt = spec.dt || 0.1          // time step
+    , dx = spec.dx || 1            // spatial step
+    , gamma = spec.gamma || 0.02   // wave or diffusion paramater (controls decay)
     , vel = spec.vel || 2          // wave velocity
-    , alpha = spec.alpha || 1      // diffusion paramter
-    , eqn = spec.eqn || 'wave'
+    , eqn = spec.eqn || 'wave'     // or "diffusion"
     , u                            // main data array
     , un                           // next time step data array
     , up                           // previous time step data array
@@ -28,6 +29,9 @@ module.exports = function pdeEngine(spec) {
       , 1, -4,  1
       , 0,  1,  0
     ]
+  /*
+   * 2D Guassian kernel for adding sources
+   */
     , gauss = [
       1/256,  4/256,  6/256,  4/256, 1/256
       , 4/256, 16/256, 24/256, 16/256, 4/256
@@ -35,16 +39,20 @@ module.exports = function pdeEngine(spec) {
       , 4/256, 16/256, 24/256, 16/256, 4/256
       , 1/256,  4/256,  6/256,  4/256, 1/256
     ]
-
+  /*
+   * c1 and c2 are used for the wave eqn coefficients
+   * they have influence from gamma (wave decay)
+   */
   , c1 = 2 - gamma * dt
   , c2 = gamma * dt - 1
   , c3 = (dt*dt * vel*vel) / (dx*dx)
-  , c4 = alpha * dt / (dx * dx)
+  , c4 = gamma * dt / (dx * dx)
 
-
+  /* 
+   * Solves the wave equation PDE
+   * using convolution.
+   */
   function waveUpdate () {
-    // Solves the wave equation PDE
-    // using convolution.
     var row, col, ind
     var dum = conv2(u, coeffs)
      for (row = 0; row < height; ++row)
@@ -57,9 +65,11 @@ module.exports = function pdeEngine(spec) {
     return u
   }
 
+  /*
+   * Solves the diffusion equation PDE
+   * using convolution.
+   */ 
   function diffusionUpdate () {
-    // Solves the diffusion equation PDE
-    // using convolution.
     var row, col, ind
     var dum = conv2(u, coeffs)
     for (row = 0; row < height; ++row)
@@ -71,11 +81,13 @@ module.exports = function pdeEngine(spec) {
     return u
   }
 
+  /*
+   * iterates over image, then over kernel and
+   * multiplies the flipped kernel coeffs
+   * with appropriate image values, sums them
+   * then adds into new array entry.
+   */
   function conv2(image, kernel) {
-    // iterates over image, then over kernel and
-    // multiplies the flipped kernel coeffs
-    // with appropriate image values, sums them
-    // then adds into new array entry.
     var out = new Float64Array( height * width  )
     var acc = 0
     , row, col, i, j, k
@@ -97,10 +109,11 @@ module.exports = function pdeEngine(spec) {
     return out
   }
 
+  /*
+   * adds a new gaussian droplet to u
+   * at specified coordinates.
+   */
   function addSource (row, col, mag) {
-    // adds a new gaussian droplet to u
-    // at specified coordinates.
-    // (For now just adds a point source)
     var i, j
     for ( i = -2; i <= 2; i++ ) {
       for ( j = -2; j <= 2; j++ ) {
@@ -112,20 +125,23 @@ module.exports = function pdeEngine(spec) {
     }
   }
 
+/*
+ * function matches the matrix calculation sizes to
+ * reset size by init'ing new matrices.
+ */
   function reset() {
-    // function matches the matrix calculation sizes to
-    // res size by init'ing new matrices.
-    // Also sets up Poisson Default Array, and default source
     u = new Float64Array( height * width  )
     up = new Float64Array( height * width )
     un = new Float64Array( height * width )
     uu = new Float64Array( height * width )
   }
 
+/*
+ * when screen size is resized and upon init
+ * this does basic checking then calls reset
+ * to modify array sizes.
+ */
   function setResolution (hRes, wRes) {
-    // when screen size is resized and upon init
-    // this does basic checking then calls reset
-    // to modify array sizes.
     width = wRes
     height = hRes
     reset()
