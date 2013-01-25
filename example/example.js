@@ -6,7 +6,7 @@
  * benpostlethwaite.ca
  */
 
-var engine = require('../pde-engine')
+var engine = require('../.')
   , aprint = require('printarray')
   , field = engine( {
     dt: 0.1
@@ -42,8 +42,8 @@ var src = {
 field.addSource(src.x, src.y, src.mag)
 
 /*
- * Run the wave eqn solver. 
- * Do something cool with the 
+ * Run the wave eqn solver.
+ * Do something cool with the
  * coefficients: plot with html5 canvas
  * or gnuplot or whatever, or turn it into
  * animations within a website or video game.
@@ -61,7 +61,6 @@ var tic = setInterval( function () {
   steps--
 
   if (steps === 0)
-    clearInterval(tic) 
+    clearInterval(tic)
 
 } , 1000 )
-

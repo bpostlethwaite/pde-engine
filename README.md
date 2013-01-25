@@ -2,14 +2,14 @@
 
 A simple solver of the heat/diffusion equation and wave equation meant for driving visualizations not for performing exacting scientific analysis. The [forward Euler](http://en.wikipedia.org/wiki/Euler_method) step is employed for simplicity and speed, as well as further simplifying the discrete equations with the convolution operator.
 
-It solves the pde on an `mxn` grid with `m` and `n` being set by the `setResolution` method. Each call to `update` increases the solution by a time step given by `dt`. Depending on what the spatial step `dx` is set at is how fast the solution will converge, remember from highschool `v = x/t`. `update` outputs a single column vector that must be indexed by `f[i*n + j]` where `0 < i < m` and `0 < j < n`. The reason `pde-engine` outputs a 2D array strung out as a 1D vector is for computational speed. 
+It solves the pde on an `mxn` grid with `m` and `n` being set by the `setResolution` method. Each call to `update` increases the solution by a time step given by `dt`. Depending on what the spatial step `dx` is set at is how fast the solution will converge, remember from highschool `v = x/t`. `update` outputs a single column vector that must be indexed by `f[i*n + j]` where `0 < i < m` and `0 < j < n`. The reason `pde-engine` outputs a 2D array strung out as a 1D vector is for computational speed.
 
 Version 0.2.0 uses [Typed Arrays](https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays) for computational efficiency / speed.
 
 ## How to use
 
 ```javascript
-var engine = require('../pde-engine')
+var engine = require('pde-engine')
   , aprint = require('printarray')
   , field = engine( {
     dt: 0.1
@@ -45,8 +45,8 @@ var src = {
 field.addSource(src.x, src.y, src.mag)
 
 /*
- * Run the wave eqn solver. 
- * Do something cool with the 
+ * Run the wave eqn solver.
+ * Do something cool with the
  * coefficients: plot with html5 canvas
  * or gnuplot or whatever, or turn it into
  * animations within a website or video game.
@@ -64,7 +64,7 @@ var tic = setInterval( function () {
   steps--
 
   if (steps === 0)
-    clearInterval(tic) 
+    clearInterval(tic)
 
 } , 1000 )
 
@@ -102,5 +102,3 @@ to include it. See [benpostlethwaite.ca](http://benpostlethwaite.ca) for a worki
 This is an early but fully working physics engine. Future releases may optimize algorithms or add new methods/configs, but this basic API should remain stable.
 
 Tests will be coming soon. For now this is primarily a tool for graphics.
-
-
