@@ -40,15 +40,17 @@ module.exports = function pdeEngine(spec) {
       , 1/256,  4/256,  6/256,  4/256, 1/256
     ]
   /*
-   * c1 and c2 are used for the wave eqn coefficients
+   * c1, c2 & c3 are used for the wave eqn coefficients
    * they have influence from gamma (wave decay)
+   * c4 is for diffusion equation, gamma controls rate of
+   * diffusion (conductivity or resistivity)
    */
   , c1 = 2 - gamma * dt
   , c2 = gamma * dt - 1
   , c3 = (dt*dt * vel*vel) / (dx*dx)
   , c4 = gamma * dt / (dx * dx)
 
-  /* 
+  /*
    * Solves the wave equation PDE
    * using convolution.
    */
@@ -68,7 +70,7 @@ module.exports = function pdeEngine(spec) {
   /*
    * Solves the diffusion equation PDE
    * using convolution.
-   */ 
+   */
   function diffusionUpdate () {
     var row, col, ind
     var dum = conv2(u, coeffs)
