@@ -26,8 +26,8 @@
     "test": "test",
     "example": "example"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "printarray": ">=0.1.0"
-  },
-  "devDependencies": {}
+  }
 }
