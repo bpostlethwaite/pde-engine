@@ -1,10 +1,10 @@
 {
   "name": "pde-engine",
-  "version": "0.3.2",
+  "version": "0.3.4",
   "description": "Basic heat and wave equation solver for node and the browser",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test" : "tap test/*.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "printarray": ">=0.1.0"
+    "printarray": ">=0.1.0",
+    "arraytools": ">0",
+    "tape": ">0.2",
+    "tap": ">0.3"
   }
 }

@@ -7,7 +7,7 @@
  *
  * License MIT
  */
- 
+
 module.exports = function pdeEngine(spec) {
   var that = {}
     , spec = spec || {}
@@ -16,6 +16,8 @@ module.exports = function pdeEngine(spec) {
     , gamma = spec.gamma || 0.02   // wave or diffusion paramater (controls decay)
     , vel = spec.vel || 2          // wave velocity
     , eqn = spec.eqn || 'wave'     // or "diffusion"
+    , vres = spec.vres || 5        // default starting vertical resolution
+    , hres = spec.hres || 5        // default starting horizontal resolution
     , u                            // main data array
     , un                           // next time step data array
     , up                           // previous time step data array
@@ -49,6 +51,8 @@ module.exports = function pdeEngine(spec) {
   , c2 = gamma * dt - 1
   , c3 = (dt*dt * vel*vel) / (dx*dx)
   , c4 = gamma * dt / (dx * dx)
+
+  setResolution(vres, hres)
 
   /*
    * Solves the wave equation PDE
@@ -143,9 +147,9 @@ module.exports = function pdeEngine(spec) {
  * this does basic checking then calls reset
  * to modify array sizes.
  */
-  function setResolution (hRes, wRes) {
-    width = wRes
-    height = hRes
+  function setResolution (vRes, hRes) {
+    width = hRes
+    height = vRes
     reset()
   }
 
